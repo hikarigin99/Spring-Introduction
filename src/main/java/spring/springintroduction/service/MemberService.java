@@ -1,5 +1,7 @@
 package spring.springintroduction.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import spring.springintroduction.domain.Member;
 import spring.springintroduction.repository.MemberRepository;
 import spring.springintroduction.repository.MemoryMemberRepository;
@@ -7,9 +9,11 @@ import spring.springintroduction.repository.MemoryMemberRepository;
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class MemberService {
     private final MemberRepository memberRepository;
 
+    @Autowired
     public MemberService(MemberRepository memberRepository) { //Dependency Injection (DI)
         this.memberRepository = memberRepository;
     }
