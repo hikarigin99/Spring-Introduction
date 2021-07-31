@@ -25,14 +25,14 @@ public class MemberController {
         return "members/createMemberForm";
     }
 
-    @PostMapping("members/new")
+    @PostMapping("/members/new")
     public String create(MemberForm form) {
         Member member = new Member();
         member.setName(form.getName());
 
         memberService.join(member);
 
-        return "redirect:/";
+        return "redirect:/"; // home 화면으로 돌려보냄
     }
 
     @GetMapping("/members")
@@ -41,5 +41,4 @@ public class MemberController {
         model.addAttribute("members", members);
         return "members/memberList";
     }
-
 }
