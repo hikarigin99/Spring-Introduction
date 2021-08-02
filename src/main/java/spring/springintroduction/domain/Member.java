@@ -1,9 +1,15 @@
 package spring.springintroduction.domain;
 
+import javax.persistence.*;
+
+@Entity
 public class Member {
 
     // 고객이 저장하는 ID (X), 시스템이 저장하는 ID
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    //@Column(name = "username")
     private String name;
 
     public Long getId() {
