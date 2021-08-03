@@ -3,6 +3,7 @@ package spring.springintroduction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import spring.springintroduction.aop.TimeTraceAop;
 import spring.springintroduction.repository.*;
 import spring.springintroduction.service.MemberService;
 
@@ -36,6 +37,11 @@ public class SpringConfig {
     public MemberService memberService() {
         return new MemberService(memberRepository);
     } // 의존 관계 셋팅
+
+//    @Bean
+//    public TimeTraceAop timeTraceAop() {
+//        return new TimeTraceAop();
+//    }
 
 //    @Bean   // 스프링 빈 등록
 //    public MemberRepository memberRepository() {
