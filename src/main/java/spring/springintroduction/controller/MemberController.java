@@ -18,6 +18,7 @@ public class MemberController {
     @Autowired  //DI : Dependency Injection, Service와 연결, 의존 관계 주입
     public MemberController(MemberService memberService) {
         this.memberService = memberService;
+        System.out.println("memberService: " + memberService.getClass()); // memberService 프록시 객체 확인 <- AOP
     }
 
     @GetMapping("/members/new")
