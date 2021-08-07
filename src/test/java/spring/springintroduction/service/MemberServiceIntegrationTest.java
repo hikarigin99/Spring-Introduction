@@ -3,6 +3,7 @@ package spring.springintroduction.service;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.annotation.Commit;
 import org.springframework.transaction.annotation.Transactional;
 import spring.springintroduction.domain.Member;
 import spring.springintroduction.repository.MemberRepository;
@@ -18,10 +19,11 @@ class MemberServiceIntegrationTest {
     @Autowired MemberRepository memberRepository;
 
     @Test
+    //@Commit
     void 회원가입() {
         //given
         Member member = new Member();
-        member.setName("spring");  //spring이면 오류 발생
+        member.setName("추가됨");  //spring이면 오류 발생
 
         //when
         Long saveId = memberService.join(member);
